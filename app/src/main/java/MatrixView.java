@@ -47,7 +47,7 @@ public class MatrixView {
             if(this.Cal_Matrix[k][j] == 0)
             {
                 this.Cal_Matrix[k][j] = this.Cal_Matrix[temp][j];
-                this.Cal_Matrix[temp++][j] = 0;
+                this.Cal_Matrix[temp--][j] = 0;
             }
         }
     }
@@ -65,4 +65,155 @@ public class MatrixView {
             }
         }
     }
+    public void SlideRight()
+    {
+        for (int j = 2; j >= 0; j--)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if(this.Cal_Matrix[i][j] != 0)
+                {
+                    MoveRight(i, j);
+                }
+            }
+        }
+        AddRight();
+        for (int j = 2; j >= 0; j--)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if(this.Cal_Matrix[i][j] != 0)
+                {
+                    MoveRight(i, j);
+                }
+            }
+        }
+    }
+    private void MoveRight(int i, int j)
+    {
+        int temp = j;
+        for (int k = j+1; k < 4; k++)
+        {
+            if(this.Cal_Matrix[i][k] == 0)
+            {
+                this.Cal_Matrix[i][k] = this.Cal_Matrix[i][temp];
+                this.Cal_Matrix[i][temp++] = 0;
+            }
+        }
+    }
+    private void AddRight()
+    {
+        for (int j = 3; j > 0; j--)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if(this.Cal_Matrix[i][j] != 0 && this.Cal_Matrix[i][j-1] == this.Cal_Matrix[i][j])
+                {
+                    this.Cal_Matrix[i][j] = 2*this.Cal_Matrix[i][j];
+                    this.Cal_Matrix[i][j-1] = 0;
+                }
+            }
+        }
+    }
+    public void SlideLeft()
+    {
+        for (int j = 1; j < 4; j++)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if(this.Cal_Matrix[i][j] != 0)
+                {
+                    MoveLeft(i, j);
+                }
+            }
+        }
+        AddLeft();
+        for (int j = 1; j < 4; j++)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if(this.Cal_Matrix[i][j] != 0)
+                {
+                    MoveLeft(i, j);
+                }
+            }
+        }
+    }
+    private void MoveLeft(int i, int j)
+    {
+        int temp = j;
+        for (int k = j-1; k >= 0; k--)
+        {
+            if(this.Cal_Matrix[i][k] == 0)
+            {
+                this.Cal_Matrix[i][k] = this.Cal_Matrix[i][temp];
+                this.Cal_Matrix[i][temp--] = 0;
+            }
+        }
+    }
+    private void AddLeft()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if(this.Cal_Matrix[i][j] != 0 && this.Cal_Matrix[i][j+1] == this.Cal_Matrix[i][j])
+                {
+                    this.Cal_Matrix[i][j] = 2*this.Cal_Matrix[i][j];
+                    this.Cal_Matrix[i][j+1] = 0;
+                }
+            }
+        }
+    }
+    public void SlideDown()
+    {
+        for (int i = 2; i >= 0; i--)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if(this.Cal_Matrix[i][j] != 0)
+                {
+                    MoveDown(i, j);
+                }
+            }
+        }
+        AddDown();
+        for (int i = 2; i >= 0; i--)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if(this.Cal_Matrix[i][j] != 0)
+                {
+                    MoveDown(i, j);
+                }
+            }
+        }
+    }
+    private void MoveDown(int i, int j)
+    {
+        int temp = i;
+        for (int k = i+1; k < 4; k--)
+        {
+            if(this.Cal_Matrix[k][j] == 0)
+            {
+                this.Cal_Matrix[k][j] = this.Cal_Matrix[temp][j];
+                this.Cal_Matrix[temp--][j] = 0;
+            }
+        }
+    }
+    private void AddDown()
+    {
+        for (int i = 3; i > 0; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if(this.Cal_Matrix[i][j] != 0 && this.Cal_Matrix[i-1][j] == this.Cal_Matrix[i][j])
+                {
+                    this.Cal_Matrix[i][j] = 2*this.Cal_Matrix[i][j];
+                    this.Cal_Matrix[i-1][j] = 0;
+                }
+            }
+        }
+    }
 }
+
