@@ -1,7 +1,8 @@
 import android.widget.ImageView;
 
+import java.util.Random;
+
 public class MatrixView {
-    ImageView[][] Matrix = new ImageView[4][4];
     int[][] Cal_Matrix = new int[4][4];
     public MatrixView()
     {
@@ -9,7 +10,6 @@ public class MatrixView {
         {
             for (int j = 0; j < 4; j++)
             {
-                this.Matrix[i][j] = null;
                 this.Cal_Matrix[i][j] = 0;
             }
 
@@ -214,6 +214,119 @@ public class MatrixView {
                 }
             }
         }
+    }
+    public void GameStart()
+    {
+        Random rnd = new Random();
+        int x1 = rnd.nextInt(4)+1, y1 = rnd.nextInt(4)+1;
+        this.Cal_Matrix[x1][y1] = 2;
+        int x2 = rnd.nextInt(4)+1, y2 = rnd.nextInt(4)+1;
+        while(x2 == x1 && y2 == y1)
+        {
+            x2 = rnd.nextInt(4)+1;
+            y2 = rnd.nextInt(4)+1;
+        }
+        this.Cal_Matrix[x2][y2] = 2;
+    }
+    public void AfterMove()
+    {
+        Random rnd = new Random();
+        int x1 = rnd.nextInt(4)+1, y1 = rnd.nextInt(4)+1;
+        while(this.Cal_Matrix[x1][y1] != 0)
+        {
+            x1 = rnd.nextInt(4)+1;
+            y1 = rnd.nextInt(4)+1;
+        }
+        this.Cal_Matrix[x1][y1] = 2;
+    }
+
+    public boolean CheckLose()
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j < 4; j++)
+            {
+                if(i == 0)
+                {
+                    if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i+1][j])
+                        return false;
+                    if(j == 0)
+                    {
+                        if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i][j+1])
+                            return false;
+                    }
+                    if(j == 3)
+                    {
+                        if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i][j-1])
+                            return false;
+                    }
+                    else
+                    {
+                        if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i][j+1])
+                            return false;
+                        if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i][j-1])
+                            return false;
+                    }
+                }
+                else if (j == 0)
+                {
+                    if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i][j+1])
+                        return false;
+                    if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i-1][j])
+                        return false;
+                    if(i != 3)
+                    {
+                        if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i+1][j])
+                            return false;
+                    }
+                }
+                else if(i == 3)
+                {
+                    if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i][j-1])
+                        return false;
+                    if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i-1][j])
+                        return false;
+                    if( j != 3)
+                    {
+                        if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i][j+1])
+                            return false;
+                    }
+                }
+                else if(j == 3)
+                {
+                    if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i][j-1])
+                        return false;
+                    if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i-1][j])
+                        return false;
+                    if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i+1][j])
+                        return false;
+                }
+                else
+                {
+                    if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i][j+1])
+                        return false;
+                    if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i][j-1])
+                        return false;
+                    if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i-1][j])
+                        return false;
+                    if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i+1][j])
+                        return false;
+                }
+            }
+        }
+        return true;
+    }
+    public boolean CheckWin()
+    {
+        for(int i = 0; i < 4; i ++)
+        {
+            for(int j = 0; j < 4; j++)
+            {
+                if(this.Cal_Matrix[i][j] == 2048)
+                    return true;
+            }
+        }
+        return false;
     }
 }
 
