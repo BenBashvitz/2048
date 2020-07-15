@@ -1,15 +1,10 @@
 package com.example.a2048;
 
-import android.view.ViewDebug;
-import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.Random;
-
-public class MatrixView extends GameActivity{
+public class MatrixView extends GameActivity {
     int[][] Cal_Matrix = new int[4][4];
-    TextView[][] Matrix = new TextView[4][4];
-    public MatrixView(int[] ids)
+    public MatrixView()
     {
         for (int i  = 0; i < 4; i++)
         {
@@ -17,12 +12,11 @@ public class MatrixView extends GameActivity{
             {
                 this.Cal_Matrix[i][j] = 0;
             }
-
         }
-        for(int i = 0; i < 16; i++)
-        {
-            Matrix[i/4][i%4] = (TextView)findViewById(ids[i]);
-        }
+    }
+    public int[][] GetMatrix()
+    {
+        return this.Cal_Matrix;
     }
     public void SlideUp()
     {
@@ -201,18 +195,18 @@ public class MatrixView extends GameActivity{
     private void MoveDown(int i, int j)
     {
         int temp = i;
-        for (int k = i+1; k < 4; k--)
+        for (int k = i+1; k < 4; k++)
         {
             if(this.Cal_Matrix[k][j] == 0)
             {
                 this.Cal_Matrix[k][j] = this.Cal_Matrix[temp][j];
-                this.Cal_Matrix[temp--][j] = 0;
+                this.Cal_Matrix[temp++][j] = 0;
             }
         }
     }
     private void AddDown()
     {
-        for (int i = 3; i > 0; i++)
+        for (int i = 3; i > 0; i--)
         {
             for (int j = 0; j < 4; j++)
             {
@@ -227,37 +221,26 @@ public class MatrixView extends GameActivity{
     public void GameStart()
     {
         Random rnd = new Random();
-        int x1 = rnd.nextInt(4)+1, y1 = rnd.nextInt(4)+1;
+        int x1 = rnd.nextInt(4), y1 = rnd.nextInt(4);
+        System.out.println(x1 + "," + y1);
         this.Cal_Matrix[x1][y1] = 2;
-        this.Matrix[x1][y1].setText("2");
-        int x2 = rnd.nextInt(4)+1, y2 = rnd.nextInt(4)+1;
+        int x2 = rnd.nextInt(4), y2 = rnd.nextInt(4);
         while(x2 == x1 && y2 == y1)
         {
-            x2 = rnd.nextInt(4)+1;
-            y2 = rnd.nextInt(4)+1;
+            x2 = rnd.nextInt(4);
+            y2 = rnd.nextInt(4);
         }
         this.Cal_Matrix[x2][y2] = 2;
-        this.Matrix[x2][y2].setText("2");
     }
 
-    public void UpdateMatrix()
-    {
-        for(int i = 0; i < 4; i++)
-        {
-            for(int j = 0; j < 4; j++)
-            {
-                this.Matrix[i][j].setText(this.Cal_Matrix[i][j]);
-            }
-        }
-    }
     public void AfterMove()
     {
         Random rnd = new Random();
-        int x1 = rnd.nextInt(4)+1, y1 = rnd.nextInt(4)+1;
+        int x1 = rnd.nextInt(4), y1 = rnd.nextInt(4);
         while(this.Cal_Matrix[x1][y1] != 0)
         {
-            x1 = rnd.nextInt(4)+1;
-            y1 = rnd.nextInt(4)+1;
+            x1 = rnd.nextInt(4);
+            y1 = rnd.nextInt(4);
         }
         this.Cal_Matrix[x1][y1] = 2;
     }
@@ -351,4 +334,3 @@ public class MatrixView extends GameActivity{
         return false;
     }
 }
-

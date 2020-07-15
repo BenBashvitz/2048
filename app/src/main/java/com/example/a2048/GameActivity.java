@@ -8,65 +8,57 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class GameActivity extends AppCompatActivity {
-    int[] arr_id;
+    TextView[] SqrArray;
     ImageButton BtnRight,BtnLeft,BtnUp,BtnDown;
     MatrixView mtv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        arr_id = new int[16];
-        arr_id[0] = R.id.Sqr1;
-        arr_id[1] = R.id.Sqr2;
-        arr_id[2] = R.id.Sqr3;
-        arr_id[3] = R.id.Sqr4;
-        arr_id[4] = R.id.Sqr5;
-        arr_id[5] = R.id.Sqr5;
-        arr_id[6] = R.id.Sqr6;
-        arr_id[7] = R.id.Sqr7;
-        arr_id[8] = R.id.Sqr8;
-        arr_id[9] = R.id.Sqr9;
-        arr_id[10] = R.id.Sqr10;
-        arr_id[11] = R.id.Sqr11;
-        arr_id[12] = R.id.Sqr12;
-        arr_id[13] = R.id.Sqr13;
-        arr_id[14] = R.id.Sqr14;
-        arr_id[15] = R.id.Sqr15;
-        arr_id[16] = R.id.Sqr16;
-        mtv = new MatrixView(arr_id);
-        mtv.GameStart();
-        BtnRight = (ImageButton)findViewById(R.id.BtnRight);
-        BtnLeft = (ImageButton)findViewById(R.id.BtnLeft);
-        BtnUp = (ImageButton)findViewById(R.id.BtnUp);
-        BtnDown = (ImageButton)findViewById(R.id.BtnDown);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        BtnDown.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mtv.SlideDown();
-                mtv.AfterMove();
-                mtv.UpdateMatrix();
-                mtv.CheckLose();
-                mtv.CheckWin();
+        mtv = new MatrixView();
+        mtv.GameStart();
+        SqrArray = new TextView[16];
+        SqrArray[0] = findViewById(R.id.Sqr1);
+        SqrArray[1] = findViewById(R.id.Sqr2);
+        SqrArray[2] = findViewById(R.id.Sqr3);
+        SqrArray[3] = findViewById(R.id.Sqr4);
+        SqrArray[4] = findViewById(R.id.Sqr5);
+        SqrArray[5] = findViewById(R.id.Sqr6);
+        SqrArray[6] = findViewById(R.id.Sqr7);
+        SqrArray[7] = findViewById(R.id.Sqr8);
+        SqrArray[8] = findViewById(R.id.Sqr9);
+        SqrArray[9] = findViewById(R.id.Sqr10);
+        SqrArray[10] = findViewById(R.id.Sqr11);
+        SqrArray[11] = findViewById(R.id.Sqr12);
+        SqrArray[12] = findViewById(R.id.Sqr13);
+        SqrArray[13] = findViewById(R.id.Sqr14);
+        SqrArray[14] = findViewById(R.id.Sqr15);
+        SqrArray[15] = findViewById(R.id.Sqr16);
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j < 4; j++)
+            {
+                SqrArray[(i*4)+j].setText(String.valueOf(mtv.GetMatrix()[i][j]));
             }
-        });
-        BtnUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mtv.SlideUp();
-                mtv.AfterMove();
-                mtv.UpdateMatrix();
-                mtv.CheckLose();
-                mtv.CheckWin();
-            }
-        });
+        }
+        BtnRight = findViewById(R.id.BtnRight);
+        BtnLeft = findViewById(R.id.BtnLeft);
+        BtnDown = findViewById(R.id.BtnDown);
+        BtnUp = findViewById(R.id.BtnUp);
         BtnRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mtv.SlideRight();
                 mtv.AfterMove();
-                mtv.UpdateMatrix();
-                mtv.CheckLose();
+                for(int i = 0; i < 4; i++)
+                {
+                    for(int j = 0; j < 4; j++)
+                    {
+                        SqrArray[(i*4)+j].setText(String.valueOf(mtv.GetMatrix()[i][j]));
+                    }
+                }
                 mtv.CheckWin();
+                mtv.CheckLose();
             }
         });
         BtnLeft.setOnClickListener(new View.OnClickListener() {
@@ -74,10 +66,50 @@ public class GameActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mtv.SlideLeft();
                 mtv.AfterMove();
-                mtv.UpdateMatrix();
-                mtv.CheckLose();
+                for(int i = 0; i < 4; i++)
+                {
+                    for(int j = 0; j < 4; j++)
+                    {
+                        SqrArray[(i*4)+j].setText(String.valueOf(mtv.GetMatrix()[i][j]));
+                    }
+                }
                 mtv.CheckWin();
+                mtv.CheckLose();
+            }
+        });
+        BtnDown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mtv.SlideDown();
+                mtv.AfterMove();
+                for(int i = 0; i < 4; i++)
+                {
+                    for(int j = 0; j < 4; j++)
+                    {
+                        SqrArray[(i*4)+j].setText(String.valueOf(mtv.GetMatrix()[i][j]));
+                    }
+                }
+                mtv.CheckWin();
+                mtv.CheckLose();
+            }
+        });
+        BtnUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mtv.SlideUp();
+                mtv.AfterMove();
+                for(int i = 0; i < 4; i++)
+                {
+                    for(int j = 0; j < 4; j++)
+                    {
+                        SqrArray[(i*4)+j].setText(String.valueOf(mtv.GetMatrix()[i][j]));
+                    }
+                }
+                mtv.CheckWin();
+                mtv.CheckLose();
             }
         });
     }
+
+
 }

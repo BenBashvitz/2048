@@ -12,9 +12,9 @@ public class MainActivity extends AppCompatActivity {
     Intent i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        btn = (Button)findViewById(R.id.btn_start);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btn = (Button)findViewById(R.id.btn_start);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
