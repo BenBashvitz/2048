@@ -1,10 +1,15 @@
+package com.example.a2048;
+
+import android.view.ViewDebug;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.Random;
 
-public class MatrixView {
+public class MatrixView extends GameActivity{
     int[][] Cal_Matrix = new int[4][4];
-    public MatrixView()
+    TextView[][] Matrix = new TextView[4][4];
+    public MatrixView(int[] ids)
     {
         for (int i  = 0; i < 4; i++)
         {
@@ -13,6 +18,10 @@ public class MatrixView {
                 this.Cal_Matrix[i][j] = 0;
             }
 
+        }
+        for(int i = 0; i < 16; i++)
+        {
+            Matrix[i/4][i%4] = (TextView)findViewById(ids[i]);
         }
     }
     public void SlideUp()
@@ -220,6 +229,7 @@ public class MatrixView {
         Random rnd = new Random();
         int x1 = rnd.nextInt(4)+1, y1 = rnd.nextInt(4)+1;
         this.Cal_Matrix[x1][y1] = 2;
+        this.Matrix[x1][y1].setText("2");
         int x2 = rnd.nextInt(4)+1, y2 = rnd.nextInt(4)+1;
         while(x2 == x1 && y2 == y1)
         {
@@ -227,6 +237,18 @@ public class MatrixView {
             y2 = rnd.nextInt(4)+1;
         }
         this.Cal_Matrix[x2][y2] = 2;
+        this.Matrix[x2][y2].setText("2");
+    }
+
+    public void UpdateMatrix()
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j < 4; j++)
+            {
+                this.Matrix[i][j].setText(this.Cal_Matrix[i][j]);
+            }
+        }
     }
     public void AfterMove()
     {

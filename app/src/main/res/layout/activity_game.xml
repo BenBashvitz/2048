@@ -8,132 +8,174 @@
 
     <TextView
         android:id="@+id/Sqr1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="0"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         />
     <TextView
         android:id="@+id/Sqr2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="0"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         android:layout_toRightOf="@+id/Sqr1"
         />
     <TextView
         android:id="@+id/Sqr3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="0"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         android:layout_toRightOf="@+id/Sqr2"
         />
     <TextView
         android:id="@+id/Sqr4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="0"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         android:layout_toRightOf="@+id/Sqr3"
         />
     <TextView
         android:id="@+id/Sqr5"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="0"
         android:layout_below="@+id/Sqr1"
         android:layout_marginLeft="100dp"
         />
     <TextView
         android:id="@+id/Sqr6"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="0"
         android:layout_below="@+id/Sqr2"
         android:layout_toRightOf="@+id/Sqr5"
         />
     <TextView
         android:id="@+id/Sqr7"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="0"
         android:layout_below="@+id/Sqr3"
         android:layout_toRightOf="@+id/Sqr6"
         />
+
     <TextView
         android:id="@+id/Sqr8"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:text="0"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/Sqr4"
         android:layout_toRightOf="@+id/Sqr7"
-        />
+        android:text="0" />
+
     <TextView
         android:id="@+id/Sqr9"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="0"
         android:layout_marginLeft="100dp"
         android:layout_below="@+id/Sqr5"
         />
     <TextView
         android:id="@+id/Sqr10"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="0"
         android:layout_below="@+id/Sqr6"
         android:layout_toRightOf="@+id/Sqr9"
         />
     <TextView
         android:id="@+id/Sqr11"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="0"
         android:layout_below="@+id/Sqr7"
         android:layout_toRightOf="@+id/Sqr10"
         />
     <TextView
         android:id="@+id/Sqr12"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="0"
         android:layout_below="@+id/Sqr8"
         android:layout_toRightOf="@+id/Sqr11"
         />
     <TextView
         android:id="@+id/Sqr13"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="0"
         android:layout_below="@+id/Sqr9"
         android:layout_marginLeft="100dp"
         />
     <TextView
         android:id="@+id/Sqr14"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="0"
         android:layout_below="@+id/Sqr10"
         android:layout_toRightOf="@+id/Sqr13"
         />
     <TextView
         android:id="@+id/Sqr15"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="0"
         android:layout_below="@+id/Sqr11"
         android:layout_toRightOf="@+id/Sqr14"
         />
     <TextView
         android:id="@+id/Sqr16"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="0"
         android:layout_below="@+id/Sqr12"
         android:layout_toRightOf="@+id/Sqr15"
         />
+
+    <ImageButton
+        android:id="@+id/BtnCenter"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="500dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <ImageButton
+        android:id="@+id/BtnRight"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignBottom="@id/BtnCenter"
+        android:layout_toRightOf="@id/BtnCenter"
+        />
+
+    <ImageButton
+        android:id="@+id/BtnLeft"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignBottom="@id/BtnCenter"
+        android:layout_toLeftOf="@id/BtnCenter"
+        />
+
+    <ImageButton
+        android:id="@+id/BtnUp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="425dp"
+        />
+
+    <ImageButton
+        android:id="@+id/BtnDown"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/BtnCenter"
+        />
+
 
 
 </RelativeLayout>

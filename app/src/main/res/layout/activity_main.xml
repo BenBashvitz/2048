@@ -11,6 +11,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_start"
         android:text="Start Game"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
