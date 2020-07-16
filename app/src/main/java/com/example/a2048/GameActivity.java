@@ -57,8 +57,6 @@ public class GameActivity extends AppCompatActivity {
                         SqrArray[(i*4)+j].setText(String.valueOf(mtv.GetMatrix()[i][j]));
                     }
                 }
-                mtv.CheckWin();
-                mtv.CheckLose();
             }
         });
         BtnLeft.setOnClickListener(new View.OnClickListener() {
@@ -73,8 +71,7 @@ public class GameActivity extends AppCompatActivity {
                         SqrArray[(i*4)+j].setText(String.valueOf(mtv.GetMatrix()[i][j]));
                     }
                 }
-                mtv.CheckWin();
-                mtv.CheckLose();
+
             }
         });
         BtnDown.setOnClickListener(new View.OnClickListener() {
@@ -89,8 +86,6 @@ public class GameActivity extends AppCompatActivity {
                         SqrArray[(i*4)+j].setText(String.valueOf(mtv.GetMatrix()[i][j]));
                     }
                 }
-                mtv.CheckWin();
-                mtv.CheckLose();
             }
         });
         BtnUp.setOnClickListener(new View.OnClickListener() {
@@ -105,8 +100,6 @@ public class GameActivity extends AppCompatActivity {
                         SqrArray[(i*4)+j].setText(String.valueOf(mtv.GetMatrix()[i][j]));
                     }
                 }
-                mtv.CheckWin();
-                mtv.CheckLose();
             }
         });
     }

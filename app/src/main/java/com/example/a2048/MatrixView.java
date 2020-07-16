@@ -156,9 +156,9 @@ public class MatrixView extends GameActivity {
     }
     private void AddLeft()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
-            for (int j = 0; j < 4; j++)
+            for (int j = 0; j < 3; j++)
             {
                 if(this.Cal_Matrix[i][j] != 0 && this.Cal_Matrix[i][j+1] == this.Cal_Matrix[i][j])
                 {
