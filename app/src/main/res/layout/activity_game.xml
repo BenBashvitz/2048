@@ -142,6 +142,7 @@
         android:layout_height="75dp"
         android:layout_alignBottom="@id/BtnDown"
         android:layout_toRightOf="@id/BtnDown"
+        android:src="@drawable/right_arrow"
         />
 
     <ImageButton
@@ -150,6 +151,7 @@
         android:layout_height="75dp"
         android:layout_alignBottom="@id/BtnDown"
         android:layout_toLeftOf="@id/BtnDown"
+        android:src="@drawable/left_arrow"
         />
 
     <ImageButton
@@ -158,6 +160,7 @@
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="360dp"
+        android:src="@drawable/up_arrow"
         />
 
     <ImageButton
@@ -166,6 +169,7 @@
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:src="@drawable/down_arrow"
         />
 
 

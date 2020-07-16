@@ -75,8 +75,11 @@ public class GameActivity extends AppCompatActivity {
         BtnRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mtv.SlideRight();
-                mtv.AfterMove();
+                if(mtv.ShouldSlideRight())
+                {
+                    mtv.SlideRight();
+                    mtv.AfterMove();
+                }
                 for(int i = 0; i < 4; i++)
                 {
                     for(int j = 0; j < 4; j++)
@@ -122,8 +125,11 @@ public class GameActivity extends AppCompatActivity {
         BtnLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mtv.SlideLeft();
-                mtv.AfterMove();
+                if(mtv.ShouldSlideLeft())
+                {
+                    mtv.SlideLeft();
+                    mtv.AfterMove();
+                }
                 for(int i = 0; i < 4; i++)
                 {
                     for(int j = 0; j < 4; j++)
@@ -169,8 +175,10 @@ public class GameActivity extends AppCompatActivity {
         BtnDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mtv.SlideDown();
-                mtv.AfterMove();
+                if(mtv.ShouldSlideDown()) {
+                    mtv.SlideDown();
+                    mtv.AfterMove();
+                }
                 for(int i = 0; i < 4; i++)
                 {
                     for(int j = 0; j < 4; j++)
@@ -216,8 +224,10 @@ public class GameActivity extends AppCompatActivity {
         BtnUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mtv.SlideUp();
-                mtv.AfterMove();
+                if(mtv.ShouldSlideUp()) {
+                    mtv.SlideUp();
+                    mtv.AfterMove();
+                }
                 for(int i = 0; i < 4; i++)
                 {
                     for(int j = 0; j < 4; j++)

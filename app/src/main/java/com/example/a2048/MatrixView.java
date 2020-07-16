@@ -2,7 +2,7 @@ package com.example.a2048;
 
 import android.widget.TextView;
 import java.util.Random;
-public class MatrixView extends GameActivity {
+public class MatrixView{
     int[][] Cal_Matrix = new int[4][4];
     public MatrixView()
     {
@@ -68,29 +68,44 @@ public class MatrixView extends GameActivity {
             }
         }
     }
+    public boolean ShouldSlideUp()
+    {
+        MatrixView tempMat = new MatrixView();
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j <4; j++)
+            {
+                tempMat.GetMatrix()[i][j] = this.Cal_Matrix[i][j];
+            }
+        }
+        tempMat.SlideUp();
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j < 4; j++)
+            {
+                if(tempMat.GetMatrix()[i][j] != this.Cal_Matrix[i][j])
+                    return true;
+            }
+        }
+        return false;
+    }
     public void SlideRight()
     {
-        for (int j = 2; j >= 0; j--)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                if(this.Cal_Matrix[i][j] != 0)
-                {
-                    MoveRight(i, j);
+            for (int j = 2; j >= 0; j--) {
+                for (int i = 0; i < 4; i++) {
+                    if (this.Cal_Matrix[i][j] != 0) {
+                        MoveRight(i, j);
+                    }
                 }
             }
-        }
-        AddRight();
-        for (int j = 2; j >= 0; j--)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                if(this.Cal_Matrix[i][j] != 0)
-                {
-                    MoveRight(i, j);
+            AddRight();
+            for (int j = 2; j >= 0; j--) {
+                for (int i = 0; i < 4; i++) {
+                    if (this.Cal_Matrix[i][j] != 0) {
+                        MoveRight(i, j);
+                    }
                 }
             }
-        }
     }
     private void MoveRight(int i, int j)
     {
@@ -117,6 +132,27 @@ public class MatrixView extends GameActivity {
                 }
             }
         }
+    }
+    public boolean ShouldSlideRight()
+    {
+        MatrixView tempMat = new MatrixView();
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j <4; j++)
+            {
+                tempMat.GetMatrix()[i][j] = this.Cal_Matrix[i][j];
+            }
+        }
+        tempMat.SlideRight();
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j < 4; j++)
+            {
+                if(tempMat.GetMatrix()[i][j] != this.Cal_Matrix[i][j])
+                    return true;
+            }
+        }
+        return false;
     }
     public void SlideLeft()
     {
@@ -168,6 +204,27 @@ public class MatrixView extends GameActivity {
             }
         }
     }
+    public boolean ShouldSlideLeft()
+    {
+        MatrixView tempMat = new MatrixView();
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j <4; j++)
+            {
+                tempMat.GetMatrix()[i][j] = this.Cal_Matrix[i][j];
+            }
+        }
+        tempMat.SlideLeft();
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j < 4; j++)
+            {
+                if(tempMat.GetMatrix()[i][j] != this.Cal_Matrix[i][j])
+                    return true;
+            }
+        }
+        return false;
+    }
     public void SlideDown()
     {
         for (int i = 2; i >= 0; i--)
@@ -217,6 +274,27 @@ public class MatrixView extends GameActivity {
                 }
             }
         }
+    }
+    public boolean ShouldSlideDown()
+    {
+        MatrixView tempMat = new MatrixView();
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j <4; j++)
+            {
+                tempMat.GetMatrix()[i][j] = this.Cal_Matrix[i][j];
+            }
+        }
+        tempMat.SlideDown();
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j < 4; j++)
+            {
+                if(tempMat.GetMatrix()[i][j] != this.Cal_Matrix[i][j])
+                    return true;
+            }
+        }
+        return false;
     }
     public void GameStart()
     {
