@@ -6,132 +6,132 @@
     android:layout_height="match_parent"
     tools:context=".GameActivity">
 
-    <TextView
+    <ImageView
         android:id="@+id/Sqr1"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="0"
+        android:src="@drawable/tile_blank"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="120dp"
         />
-    <TextView
+    <ImageView
         android:id="@+id/Sqr2"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="0"
+        android:src="@drawable/tile_blank"
         android:layout_marginTop="120dp"
         android:layout_toRightOf="@+id/Sqr1"
         />
-    <TextView
+    <ImageView
         android:id="@+id/Sqr3"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="0"
+        android:src="@drawable/tile_blank"
         android:layout_marginTop="120dp"
         android:layout_toRightOf="@+id/Sqr2"
         />
-    <TextView
+    <ImageView
         android:id="@+id/Sqr4"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="0"
+        android:src="@drawable/tile_blank"
         android:layout_marginTop="120dp"
         android:layout_toRightOf="@+id/Sqr3"
         />
-    <TextView
+    <ImageView
         android:id="@+id/Sqr5"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="0"
+        android:src="@drawable/tile_blank"
         android:layout_below="@+id/Sqr1"
         android:layout_marginLeft="100dp"
         />
-    <TextView
+    <ImageView
         android:id="@+id/Sqr6"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="0"
+        android:src="@drawable/tile_blank"
         android:layout_below="@+id/Sqr2"
         android:layout_toRightOf="@+id/Sqr5"
         />
-    <TextView
+    <ImageView
         android:id="@+id/Sqr7"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="0"
+        android:src="@drawable/tile_blank"
         android:layout_below="@+id/Sqr3"
         android:layout_toRightOf="@+id/Sqr6"
         />
 
-    <TextView
+    <ImageView
         android:id="@+id/Sqr8"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_below="@+id/Sqr4"
         android:layout_toRightOf="@+id/Sqr7"
-        android:text="0" />
+        android:src="@drawable/tile_blank" />
 
-    <TextView
+    <ImageView
         android:id="@+id/Sqr9"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="0"
+        android:src="@drawable/tile_blank"
         android:layout_marginLeft="100dp"
         android:layout_below="@+id/Sqr5"
         />
-    <TextView
+    <ImageView
         android:id="@+id/Sqr10"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="0"
+        android:src="@drawable/tile_blank"
         android:layout_below="@+id/Sqr6"
         android:layout_toRightOf="@+id/Sqr9"
         />
-    <TextView
+    <ImageView
         android:id="@+id/Sqr11"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="0"
+        android:src="@drawable/tile_blank"
         android:layout_below="@+id/Sqr7"
         android:layout_toRightOf="@+id/Sqr10"
         />
-    <TextView
+    <ImageView
         android:id="@+id/Sqr12"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="0"
+        android:src="@drawable/tile_blank"
         android:layout_below="@+id/Sqr8"
         android:layout_toRightOf="@+id/Sqr11"
         />
-    <TextView
+    <ImageView
         android:id="@+id/Sqr13"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="0"
+        android:src="@drawable/tile_blank"
         android:layout_below="@+id/Sqr9"
         android:layout_marginLeft="100dp"
         />
-    <TextView
+    <ImageView
         android:id="@+id/Sqr14"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="0"
+        android:src="@drawable/tile_blank"
         android:layout_below="@+id/Sqr10"
         android:layout_toRightOf="@+id/Sqr13"
         />
-    <TextView
+    <ImageView
         android:id="@+id/Sqr15"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="0"
+        android:src="@drawable/tile_blank"
         android:layout_below="@+id/Sqr11"
         android:layout_toRightOf="@+id/Sqr14"
         />
-    <TextView
+    <ImageView
         android:id="@+id/Sqr16"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="0"
+        android:src="@drawable/tile_blank"
         android:layout_below="@+id/Sqr12"
         android:layout_toRightOf="@+id/Sqr15"
         />

@@ -260,7 +260,7 @@ public class MatrixView extends GameActivity {
                         if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i][j+1])
                             return false;
                     }
-                    if(j == 3)
+                    else if(j == 3)
                     {
                         if(this.Cal_Matrix[i][j] == this.Cal_Matrix[i][j-1])
                             return false;
@@ -327,7 +327,7 @@ public class MatrixView extends GameActivity {
         {
             for(int j = 0; j < 4; j++)
             {
-                if(this.Cal_Matrix[i][j] == 2048)
+                if(this.Cal_Matrix[i][j] == 16)
                     return true;
             }
         }
